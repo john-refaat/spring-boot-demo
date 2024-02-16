@@ -10,11 +10,29 @@
 </head>
 <body>
     <div class="container-fluid">
-         <div class="card text-white">
+         <div class="card col-md-6 col-md-offset-3 mx-auto">
                 <div class="card-header text-white bg-primary">
                     <h5 class="card-title">Company List</h5>
                 </div>
                 <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <td>Name</td>
+                            <td>Address</td>
+                            <td>Indices</td>
+                            <td>Market Cap (Million USD)</td>
+                        </tr>
+                        </thead>
+                        <tr th:each="company: ${companies}">
+                            <td><span th:text="${company.name}">Name</span></td>
+                            <td><span th:text="${company.address}">Address</span></td>
+                            <td><ul>
+                                <li th:each="index : ${company.indices}" th:text="${index.name}"></li>
+                            </ul></td>
+                            <td><span th:text="${company.marketCapMUSD}">Market Cap</span></td>
+                        </tr>
+                    </table>
                 </div>
          </div>
     </div>

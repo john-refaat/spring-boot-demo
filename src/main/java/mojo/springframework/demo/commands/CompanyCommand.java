@@ -14,6 +14,6 @@ public class CompanyCommand {
     private Long id;
     private String name;
     private String address;
-    private BigDecimal marketCapUSD;
+    private BigDecimal marketCapMUSD;
     private IndexCommand[] indices;
 }

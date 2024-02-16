@@ -39,6 +39,6 @@ public class Company {
     @ManyToOne
     private Sector sector;
 
-    private BigDecimal marketCapUSD;
+    private BigDecimal marketCapMUSD;
 
 }

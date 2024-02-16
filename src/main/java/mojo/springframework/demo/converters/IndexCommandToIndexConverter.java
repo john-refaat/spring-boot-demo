@@ -7,19 +7,17 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author john
- * @since 15/02/2024
+ * @since 16/02/2024
  */
 @Component
-public class IndexToIndexCommand implements Converter<Index, IndexCommand> {
-
-
+public class IndexCommandToIndexConverter implements Converter<IndexCommand, Index> {
     @Override
-    public IndexCommand convert(Index source) {
-        IndexCommand indexCommand = new IndexCommand();
+    public Index convert(IndexCommand source) {
+        Index index = new Index();
         if (source != null) {
-            indexCommand.setId(source.getId());
-            indexCommand.setName(source.getName());
+            index.setId(source.getId());
+            index.setName(source.getName());
         }
-        return indexCommand;
+        return index;
     }
 }

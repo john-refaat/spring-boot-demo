@@ -1,5 +1,6 @@
 package mojo.springframework.demo.services;
 
+import mojo.springframework.demo.commands.CompanyCommand;
 import mojo.springframework.demo.domain.Company;
 
 import java.util.Set;
@@ -10,6 +11,8 @@ import java.util.Set;
  */
 public interface CompanyService {
 
-    Set<Company> findAllCompanies();
+    Set<CompanyCommand> findAllCompanies();
+
+    void saveOrUpdate(CompanyCommand companyCommand);
 
 }

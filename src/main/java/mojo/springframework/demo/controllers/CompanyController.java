@@ -37,6 +37,7 @@ public class CompanyController {
     @PostMapping("/company")
     public String saveOrUpdateCompany(@ModelAttribute("company") CompanyCommand company) {
         log.info("Saving company: "+company);
+        companyService.saveOrUpdate(company);
         return "redirect:/companies";
     }
 

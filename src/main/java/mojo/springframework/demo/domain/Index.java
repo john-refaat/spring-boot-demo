@@ -2,10 +2,8 @@ package mojo.springframework.demo.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * @author john
@@ -22,4 +20,8 @@ public class Index {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @ManyToMany(mappedBy = "indices")
+    private Set<Company> companies;
+
 }
