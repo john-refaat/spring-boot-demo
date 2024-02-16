@@ -40,7 +40,7 @@ class CompanyToCompanyCommandConverterTest {
         company.setId(1L);
         company.setName("company1");
         company.setIndices(new HashSet<>());
-        company.getIndices().add(new Index(1L, "index1"));
+        company.getIndices().add(new Index(1L, "index1", new HashSet<>()));
 
         //When
         Mockito.when(indexToIndexCommandConverter.convert(ArgumentMatchers.any(Index.class))).thenReturn(new IndexCommand(1L, "index1"));

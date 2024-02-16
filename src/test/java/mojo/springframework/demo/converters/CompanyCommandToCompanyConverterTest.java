@@ -12,6 +12,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.HashSet;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -39,7 +41,7 @@ class CompanyCommandToCompanyConverterTest {
         companyCommand.setName("company1");
         companyCommand.setIndices(new IndexCommand[]{new IndexCommand(2L, "index2")});
 
-        Index index = new Index(2L, "index2");
+        Index index = new Index(2L, "index2", new HashSet<>());
 
         // When
         Mockito.when(indexCommandToIndexConverter.convert(ArgumentMatchers.any(IndexCommand.class))).thenReturn(index);

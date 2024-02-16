@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.HashSet;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -25,7 +27,7 @@ class IndexToIndexCommandConverterTest {
     @Test
     void convert() {
         // Given
-        Index index = new Index(1L, "index1");
+        Index index = new Index(1L, "index1", new HashSet<>());
 
         // When
         IndexCommand result = indexToIndexCommandConverter.convert(index);
